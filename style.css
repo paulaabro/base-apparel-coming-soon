@@ -2,16 +2,17 @@
 
 :root {
   --pink: #EE8B8B;
-  --tan-pink:#CE9898;
+  --tan-pink: #CE9898;
   --green: #6EC793;
   --red: #F96464;
 
   --gray: #423A3A;
-  --white: #fff;
+  --white: #FFF;
 
-  --white-gradient: linear-gradient(150.03deg, #FFFFFF 0%, #FFF4F4 84.51%);
+  --white-gradient: linear-gradient(150.03deg, #FFF 0%, #FFF4F4 84.51%);
   --pink-gradient: linear-gradient(135deg, #F8BFBF 0%, #EE8B8B 100%);
 }
+
 body {
   font-family: 'Josefin Sans', sans-serif;
   background: var(--white-gradient);
@@ -31,9 +32,13 @@ main {
   margin: 32px;
 }
 
-.hero img{
+.hero img {
   width: 100vw;
   margin-bottom: 64px;
+}
+
+section {
+  text-align: center;
 }
 
 h1 {
@@ -42,7 +47,6 @@ h1 {
   line-height: 42px;
   letter-spacing: 11px;
   text-transform: uppercase;
-  text-align: center;
 }
 
 strong {
@@ -53,7 +57,6 @@ strong {
 .description {
   font-size: 14px;
   line-height: 22px;
-  text-align: center;
 
   margin: 16px 10vw 32px;
 }
@@ -69,7 +72,6 @@ strong {
 input {
   width: 100%;
   height: 48px;
-  opacity: 0.5;
   border: 1px solid var(--tan-pink);
   border-radius: 28px;
 
@@ -80,6 +82,7 @@ input {
 }
 
 input::placeholder {
+  opacity: 0.5;
   font: 14px/28px 'Josefin Sans', sans-serif;
   color: var(--tan-pink);
 }
@@ -113,6 +116,7 @@ button ion-icon {
 .valid {
   color: var(--green);
 }
+
 .invalid {
   color: var(--red);
 }
@@ -135,4 +139,93 @@ button ion-icon {
   font-size: 13px;
   line-height: 13px;
   margin: 8px 0 0 24px;
+}
+
+@media (min-width: 1100px) {
+  body {
+    background-image: url("./images/bg-pattern-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 445px 610px;
+    grid-template-rows: 33px calc(100vh - 33px);
+    grid-template-areas:
+      "logo hero"
+      "text hero";
+
+    gap: 32px 200px;
+    margin-left: 12vw;
+  }
+
+  .logo {
+    grid-area: logo;
+    width: 158px;
+    margin: 0;
+    padding-top: 75px;
+  }
+
+  .hero img {
+    grid-area: hero;
+    width: 610px;
+    margin: 0;
+  }
+
+  section {
+    grid-area: text;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 71px;
+    letter-spacing: 18px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 28px;
+
+    margin: 32px 0 40px;
+  }
+
+  .form {
+    width: 100%;
+    height: 56px;
+    margin: 0 0 152px;
+
+    position: relative;
+  }
+
+  input {
+    height: 56px;
+    font-size: 16px;
+    padding-left: 32px;
+  }
+
+  input::placeholder {
+    font-size: 16px;
+  }
+
+  button {
+    width: 100px;
+    height: 56px;
+    cursor: pointer;
+    transition: all 400ms;
+  }
+
+  button:hover {
+    opacity: 0.5;
+  }
+
+  .valid ion-icon.success, .invalid ion-icon.fail {
+    right: 116px;
+    top: 16px;
+  }
+
+  .valid p.success, .invalid p.fail {
+    margin-left: 32px;
+  }
 }
