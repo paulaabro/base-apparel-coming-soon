@@ -1,1 +1,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --pink: #EE8B8B;
+  --tan-pink:#CE9898;
+  --green: #6EC793;
+  --gray: #423A3A;
+  --white: #fff;
+
+  --white-gradient: linear-gradient(150.03deg, #FFFFFF 0%, #FFF4F4 84.51%);
+  --pink-gradient: linear-gradient(135deg, #F8BFBF 0%, #EE8B8B 100%);
+}
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--white-gradient);
+  color: var(--tan-pink);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  align-self: start;
+
+  margin: 32px;
+}
+
+.hero img{
+  width: 100vw;
+  margin-bottom: 64px;
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: 11px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+strong {
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.description {
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+
+  margin: 16px 10vw 32px;
+}
+
+.form {
+  width: 80vw;
+  height: 48px;
+  margin: 0 10vw 92px;
+
+  position: relative;
+}
+
+input {
+  width: 100%;
+  height: 48px;
+  opacity: 0.5;
+  border: 1px solid var(--tan-pink);
+  border-radius: 28px;
+
+  font: 14px/28px 'Josefin Sans', sans-serif;
+  padding-left: 24px;
+  color: var(--gray);
+
+}
+
+input::placeholder {
+  font: 14px/28px 'Josefin Sans', sans-serif;
+  color: var(--tan-pink);
+}
+
+button {
+  width: 64px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--pink-gradient);
+  box-shadow: 0 15px 20px rgba(198, 110, 110, 0.247569);
+  border-radius: 28px;
+
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+button ion-icon {
+  font-size: 25px;
+  color: var(--white);
+}
+
+.success, .fail {
+  display: none;
+}
+
+.valid {
+  color: var(--green);
+}
+.valid ion-icon.success, .invalid ion-icon.fail {
+  display: initial;
+  font-size: 24px;
+
+  position: absolute;
+  right: 72px;
+  top: 12px;
+}
+
+.valid p.success, .invalid p.fail {
+  display: block;
+  font-size: 13px;
+  line-height: 13px;
+  margin: 8px 0 0 24px;
+}
