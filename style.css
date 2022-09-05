@@ -141,7 +141,7 @@ button ion-icon {
   margin: 8px 0 0 24px;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 800px) {
   body {
     background-image: url("./images/bg-pattern-desktop.svg");
     background-repeat: no-repeat;
@@ -150,13 +150,12 @@ button ion-icon {
 
   main {
     display: grid;
-    grid-template-columns: 445px 610px;
-    grid-template-rows: 33px calc(100vh - 33px);
+    grid-template-columns: 445px calc(78vw - 445px);
     grid-template-areas:
       "logo hero"
       "text hero";
 
-    gap: 32px 200px;
+    gap: 32px 10vw;
     margin-left: 12vw;
   }
 
@@ -167,11 +166,15 @@ button ion-icon {
     padding-top: 75px;
   }
 
-  .hero img {
+  .hero {
     grid-area: hero;
-    width: auto;
+  }
+
+  .hero img {
     height: 100vh;
+    width: calc(100vw - 445px);
     margin: 0;
+    object-fit: cover;
   }
 
   section {
