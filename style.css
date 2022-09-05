@@ -4,6 +4,8 @@
   --pink: #EE8B8B;
   --tan-pink:#CE9898;
   --green: #6EC793;
+  --red: #F96464;
+
   --gray: #423A3A;
   --white: #fff;
 
@@ -111,6 +113,14 @@ button ion-icon {
 .valid {
   color: var(--green);
 }
+.invalid {
+  color: var(--red);
+}
+
+.invalid input {
+  border: 2px solid var(--red);
+}
+
 .valid ion-icon.success, .invalid ion-icon.fail {
   display: initial;
   font-size: 24px;
